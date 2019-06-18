@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-const title = 'This is React.'
+import MedalCountTable from './MedalCountTable'
 
 ReactDOM.render(
-  <div>{title}</div>,
-  document.getElementById('app')
+  <MedalCountTable />,
+  document.getElementById('olympic-medals-widget')
 )

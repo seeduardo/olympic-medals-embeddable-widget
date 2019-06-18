@@ -23095,6 +23095,343 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/harmony-module.js":
+/*!*******************************************!*\
+  !*** (webpack)/buildin/harmony-module.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+
+/***/ "./src/App.css":
+/*!*********************!*\
+  !*** ./src/App.css ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n> .MedalCountTable {\n|   position: fixed;\n|   top: 50%;");
+
+/***/ }),
+
+/***/ "./src/CountryMedalCount.js":
+/*!**********************************!*\
+  !*** ./src/CountryMedalCount.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function CountryMedalCount(_ref) {
+  var listPlace = _ref.listPlace,
+      country = _ref.country,
+      gold = _ref.gold,
+      silver = _ref.silver,
+      bronze = _ref.bronze;
+  var flagTilesUrl = 'http://localhost:3000/flags/flagtiles/';
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "CountryMedalCount"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "list-place"
+  }, listPlace), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "flag"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: flagTilesUrl + "flag_tile_" + country + ".png",
+    alt: country
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "country-name"
+  }, country), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "gold-medals"
+  }, gold), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "silver-medals"
+  }, silver), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "bronze-medals"
+  }, bronze), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "total-medals"
+  }, gold + silver + bronze));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CountryMedalCount);
+module.exports = exports["default"];
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/CountryMedalCountContainer.js":
+/*!*******************************************!*\
+  !*** ./src/CountryMedalCountContainer.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _CountryMedalCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CountryMedalCount */ "./src/CountryMedalCount.js");
+
+
+
+
+function CountryMedalCountContainer(_ref) {
+  var medalData = _ref.medalData;
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "CountryMedalCountContainer"
+  }, medalData.slice(0, 10).map(function (countryMedalData) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountryMedalCount__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: countryMedalData.code,
+      listPlace: medalData.indexOf(countryMedalData) + 1,
+      country: countryMedalData.code,
+      gold: countryMedalData.gold,
+      silver: countryMedalData.silver,
+      bronze: countryMedalData.bronze
+    });
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CountryMedalCountContainer);
+module.exports = exports["default"];
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/ErrorMessage.js":
+/*!*****************************!*\
+  !*** ./src/ErrorMessage.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+function ErrorMessage(_ref) {
+  var error = _ref.error;
+
+  if (!error) {
+    return null;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "ErrorMessage"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Server Error"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "There has been an error while fetching medal data from the server --- please check your Internet connection and try again later."));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (ErrorMessage);
+module.exports = exports["default"];
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
+/***/ "./src/MedalCountTable.js":
+/*!********************************!*\
+  !*** ./src/MedalCountTable.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _CountryMedalCountContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CountryMedalCountContainer */ "./src/CountryMedalCountContainer.js");
+/* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ErrorMessage */ "./src/ErrorMessage.js");
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+
+function MedalCountTable() {
+  var medalDataUrl = 'https://s3-us-west-2.amazonaws.com/reuters.medals-widget/medals.json';
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      medalData = _useState2[0],
+      setMedalData = _useState2[1];
+
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null),
+      _useState4 = _slicedToArray(_useState3, 2),
+      error = _useState4[0],
+      setError = _useState4[1];
+
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("gold"),
+      _useState6 = _slicedToArray(_useState5, 2),
+      activeTab = _useState6[0],
+      setActiveTab = _useState6[1];
+
+  var medalTabs = ["gold", "silver", "bronze", "total"];
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    getMedalData();
+  }, []);
+
+  function handleClick(event) {
+    var clickedTab = event.target.id;
+    setActiveTab(clickedTab);
+    var sortedMedalData = sortMedalData(medalData, clickedTab);
+    return setMedalData(sortedMedalData);
+  }
+
+  function sortMedalData(medalData, sortType) {
+    var secondarySortType;
+
+    if (sortType === "gold") {
+      secondarySortType = "silver";
+    } else {
+      secondarySortType = "gold";
+    }
+
+    return medalData.sort(function (a, b) {
+      if (sortType === "total" && a["gold"] + a["silver"] + a["bronze"] !== b["gold"] + b["silver"] + b["bronze"]) {
+        return b["gold"] + b["silver"] + b["bronze"] - (a["gold"] + a["silver"] + a["bronze"]);
+      } else if (a[sortType] !== b[sortType]) {
+        return b[sortType] - a[sortType];
+      } else {
+        return b[secondarySortType] - a[secondarySortType];
+      }
+    });
+  }
+
+  function getMedalData() {
+    return _getMedalData.apply(this, arguments);
+  }
+
+  function _getMedalData() {
+    _getMedalData = _asyncToGenerator(
+    /*#__PURE__*/
+    regeneratorRuntime.mark(function _callee() {
+      var defaultSortType, response, medalData, sortedMedalData;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              defaultSortType = "gold";
+              setError(null);
+              _context.prev = 2;
+              _context.next = 5;
+              return fetch(medalDataUrl);
+
+            case 5:
+              response = _context.sent;
+              _context.next = 12;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](2);
+              console.log("".concat(_context.t0, " --- please check your internet connection."));
+              return _context.abrupt("return", setError(_context.t0));
+
+            case 12:
+              _context.next = 14;
+              return response.json();
+
+            case 14:
+              medalData = _context.sent;
+              sortedMedalData = sortMedalData(medalData, defaultSortType);
+              setMedalData(sortedMedalData);
+
+            case 17:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, this, [[2, 8]]);
+    }));
+    return _getMedalData.apply(this, arguments);
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "MedalCountTable"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "title"
+  }, "MEDAL COUNT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "activity"
+  }, medalTabs.map(function (medalTab) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: medalTab + " header",
+      className: medalTab === activeTab ? "active" : "not-active"
+    });
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "click-tabs"
+  }, medalTabs.map(function (medalTab) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: medalTab + " tab",
+      onClick: handleClick,
+      className: "click-tab",
+      id: medalTab
+    }, medalTab === "total" ? medalTab.toUpperCase() : null);
+  })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "medal-count"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CountryMedalCountContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    medalData: medalData
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ErrorMessage__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    error: error
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (MedalCountTable);
+module.exports = exports["default"];
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/webpack/buildin/harmony-module.js */ "./node_modules/webpack/buildin/harmony-module.js")(module)))
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -23108,10 +23445,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _MedalCountTable__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./MedalCountTable */ "./src/MedalCountTable.js");
 
 
-var title = 'This is React.';
-react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, title), document.getElementById('app'));
+
+react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_MedalCountTable__WEBPACK_IMPORTED_MODULE_2__["default"], null), document.getElementById('olympic-medals-widget'));
 
 /***/ })
 
