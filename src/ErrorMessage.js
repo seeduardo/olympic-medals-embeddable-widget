@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../public/App.css';
 
 function ErrorMessage({ error }) {
   if (!error) {

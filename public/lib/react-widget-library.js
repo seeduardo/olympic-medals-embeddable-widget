@@ -23130,14 +23130,324 @@ module.exports = function(originalModule) {
 
 /***/ }),
 
-/***/ "./src/App.css":
-/*!*********************!*\
-  !*** ./src/App.css ***!
-  \*********************/
+/***/ "./public/App.css":
+/*!************************!*\
+  !*** ./public/App.css ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type.\n> .MedalCountTable {\n|   position: fixed;\n|   top: 50%;");
+/* .MedalCountTable {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-areas:
+    'title title title title title title title title'
+    '. . . . activity activity activity activity'
+    '. . . . click-tabs click-tabs click-tabs click-tabs'
+    'medal-count medal-count medal-count medal-count medal-count medal-count medal-count medal-count';
+  grid-template-columns: 6fr 11fr 13fr 16fr 13fr 13fr 13fr 15fr;
+  grid-gap: 10px;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  min-width: 20em;
+}
+
+.CountryMedalCount {
+  display: grid;
+  grid-template-areas:
+    'list-place flag country-name . gold-medals silver-medals bronze-medals total-medals';
+  grid-template-columns: 6fr 11fr 13fr 16fr 13fr 13fr 13fr 15fr;
+  grid-gap: 10px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  margin-top: 2px;
+  font-weight: 700;
+  color: #00000073;
+}
+
+.ErrorMessage {
+  color: red;
+  text-align: center;
+  min-width: 20em;
+  max-width: 25em;
+}
+
+.title {
+  grid-area: title;
+  text-align: left;
+  font-weight: 500;
+  font-size: 24px;
+  color: #00000070;
+}
+
+.activity {
+  grid-area: activity;
+  display: grid;
+  grid-template-areas:
+    '. . . .';
+  grid-template-columns: 24.074fr 24.074fr 24.074fr 27.778fr;
+  text-align: center;
+  grid-gap: 10px;
+}
+
+.click-tabs {
+  grid-area: click-tabs;
+  display: grid;
+  grid-template-areas:
+    '. . . .';
+  grid-template-columns: 24.074fr 24.074fr 24.074fr 27.778fr;
+  text-align: center;
+  grid-gap: 10px;
+}
+
+.medal-count {
+  grid-area: medal-count;
+  border-top: 2px solid #00000087;
+}
+
+.list-place {
+  grid-area: list-place;
+  text-align: right;
+}
+
+.flag {
+  grid-area: flag;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+img {
+  width: 85%;
+}
+
+.country-name {
+  grid-area: country-name;
+  text-align: left;
+}
+
+.gold-medals {
+  grid-area: gold-medals;
+  text-align: center;
+}
+
+.silver-medals {
+  grid-area: silver-medals;
+  text-align: center;
+}
+
+.bronze-medals {
+  grid-area: bronze-medals;
+  text-align: center;
+}
+
+.total-medals {
+  grid-area: total-medals;
+  text-align: center;
+  color: #000000b0;
+}
+
+.active {
+  border-bottom: 2px solid #00000080;
+  display: inline-block
+}
+
+.click-tab {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+#gold {
+  color: transparent;
+  background-color: gold;
+  cursor: pointer;
+}
+
+#silver {
+  color: transparent;
+  background-color: silver;
+  cursor: pointer;
+}
+
+#bronze {
+  color: transparent;
+  background-color: rgb(133	82 32);
+  cursor: pointer;
+}
+
+#total {
+  color: #000000b0;
+  margin-right: 57%;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .MedalCountTable {
+    grid-gap: 5px;
+    padding: 5px;
+  }
+
+  .CountryMedalCount {
+    grid-gap: 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    margin-top: 1px;
+    font-size: 12px;
+  }
+
+  .click-tabs, .activity {
+    grid-gap: 5px;
+  }
+
+  .click-tab {
+    height: 15px;
+    width: 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  #total {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .MedalCountTable {
+    grid-gap: 6px;
+    padding: 6px;
+  }
+
+  .CountryMedalCount {
+    grid-gap: 6px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 6px 0;
+    margin-top: 1.2px;
+    font-size: 14px;
+  }
+
+  .click-tabs, .activity {
+    grid-gap: 6px;
+  }
+
+  .click-tab {
+    height: 16px;
+    width: 16px;
+  }
+
+  .title {
+    font-size: 21px;
+  }
+
+  #total {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .MedalCountTable {
+    grid-gap: 8px;
+    padding: 8px;
+  }
+
+  .CountryMedalCount {
+    grid-gap: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 8px 0;
+    margin-top: 1.4px;
+    font-size: 16px;
+  }
+
+  .click-tabs, .activity {
+    grid-gap: 8px;
+  }
+
+  .click-tab {
+    height: 18px;
+    width: 18px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  #total {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .MedalCountTable {
+    grid-gap: 9px;
+    padding: 9px;
+  }
+
+  .CountryMedalCount {
+    grid-gap: 9px;
+    padding: 9px 0;
+    margin-top: 1.8px;
+    font-size: 18px;
+  }
+
+  .click-tabs, .activity {
+    grid-gap: 9px;
+  }
+
+  .click-tab {
+    height: 19px;
+    width: 19px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  #total {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .MedalCountTable {
+    grid-gap: 10px;
+    padding: 10px;
+  }
+
+  .CountryMedalCount {
+    grid-gap: 10px;
+    padding: 10px 0;
+    margin-top: 2px;
+    font-size: 20px;
+  }
+
+  .click-tabs, .activity {
+    grid-gap: 10px;
+  }
+
+  .click-tab {
+    height: 20px;
+    width: 20px;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  #total {
+    font-size: 16px;
+  }
+} */
+
 
 /***/ }),
 
@@ -23152,8 +23462,8 @@ throw new Error("Module parse failed: Unexpected token (1:0)\nYou may need an ap
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/App.css */ "./public/App.css");
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_App_css__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -23203,8 +23513,8 @@ module.exports = exports["default"];
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/App.css */ "./public/App.css");
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_App_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _CountryMedalCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CountryMedalCount */ "./src/CountryMedalCount.js");
 
 
@@ -23243,8 +23553,8 @@ module.exports = exports["default"];
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/App.css */ "./public/App.css");
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_App_css__WEBPACK_IMPORTED_MODULE_1__);
 
 
 
@@ -23277,8 +23587,8 @@ module.exports = exports["default"];
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.css */ "./src/App.css");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_App_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../public/App.css */ "./public/App.css");
+/* harmony import */ var _public_App_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_public_App_css__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _CountryMedalCountContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CountryMedalCountContainer */ "./src/CountryMedalCountContainer.js");
 /* harmony import */ var _ErrorMessage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ErrorMessage */ "./src/ErrorMessage.js");
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }

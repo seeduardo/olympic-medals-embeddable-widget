@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import '../public/App.css';
 import CountryMedalCount from './CountryMedalCount';
 
 function CountryMedalCountContainer({medalData}) {
