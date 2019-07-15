@@ -24,6 +24,7 @@
     "yargs": "^10.0.3"
   },
   "dependencies": {
+    "lodash": "^4.17.14",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
   }
